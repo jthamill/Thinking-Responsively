@@ -1,0 +1,90 @@
+body {
+    font-size:1.125rem;
+    margin:0;
+    color:#707070;
+}
+
+/* Typography */
+
+h1 {
+    color:#312614;
+    text-align:center;
+    font-size:3rem;
+}
+
+h1 span {
+    color:#b7832f;
+}
+
+h2 {
+    font-size:1.5rem;
+}
+
+p { 
+    margin-top:0;
+}
+
+
+/* Layout */
+
+.container {
+    width:95%;
+    max-width:980px;
+    margin:0 auto;
+}
+
+img {
+    width:100%;
+}
+
+.columns {
+    display:flex;
+    margin:1em 0;
+    justify-content: space-between;
+   }
+
+   @media (max-width:600px) {
+        .columns {
+            flex-direction:column;
+        }
+        .col-1,
+        .col-2,
+        .col-3 {
+            width: 100%
+        }
+   }
+
+.col-bgrnd {
+    background-color: #312614;
+    color:white;
+    padding:1em;
+}
+
+
+/* WIDTH OF COLUMNS - for wider screens */
+
+/* when thinking about this layout visualize it as if it is four columns
+
+section 1 has a layout of 1col of content + 2cols of content + 1 col of content = 4 cols
+20% + 45% + 20% = 85% and justify-content:space-between does the rest*
+
+section 2 has a layout of 3cols of content + 1col of content = 4 cols
+70% + 20% = 90% and justify-content:space-between does the rest......... you need to make it not add up to 100 so there is actually some "space" to distribute using "space-between*/
+
+
+@media (min-width:601px) {
+    .columns {
+         flex-direction: row;
+    }
+    .col-1 {
+        width: 20%
+    }
+    
+    .col-2 {
+        width: 45%;
+    }
+    
+    .col-3 {
+        width:70%;
+    }
+}
